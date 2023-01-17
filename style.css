@@ -1,19 +1,17 @@
 body{
   background-color: rgb(22, 22, 22);
   background-image: url(/img/catalina_wallpaper.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:auto auto;
+  background-size: auto;
 }
 
 .box-landscape{
   position: absolute;
-  top: 13%;
-  left: 6%;
+  top: 25%;
+  left: 27%;
   padding: 20px;
   background-color: rgb(27, 27, 27);
   height:300px ;
-  width: 700px ;
+  width: 670px ;
   box-shadow: -15px 15px 20px rgb(20, 20, 20);
   transition: all .2s ease-in-out;
   display: flex;
@@ -64,9 +62,9 @@ body{
   /* background-color: antiquewhite; */
   height: 264px;
   width: 300px;
-  padding-left: 20px;
   margin-left: 60px;
   font-family: JetBrains Mono;
+  text-align: center;
   color: aliceblue;
   font-size: 16px;
   font-weight:100;
@@ -138,26 +136,4 @@ a{
   color: aliceblue;
 }
 
-.wrapper{
-  background-color: rgb(144, 217, 244);
-  position: relative;
-  height: 300px;
-  width: 700px;
-  margin:200px auto;
-  box-shadow: -10px -10px 30px;
-  animation: 2s ease-in wrapperAnim;
-}
 
-@keyframes wrapperAnim  {
-  0% {
-    opacity: 0%;
-
-  }
-  30% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-    
-  }
-}
