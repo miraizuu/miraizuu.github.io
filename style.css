@@ -1,45 +1,10 @@
 body{
   background-color: rgb(22, 22, 22);
+  background-image: url(/img/catalina_wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:auto auto;
 }
-/* .grid-container-element{
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  background-color: antiquewhite;
-  border-radius: 8px;
-
-   
-  
-} */
-/* .box-container{
-  padding: 20px;
-  margin: 40px;
-  background-color: rgb(26, 26, 26);
-  height:250px ;
-  width:250px ;
-  box-shadow: -10px -10px 30px;
-  transition: all .2s ease-in-out;
-  
-
-  
-} */
-/* .box-container:hover{
-  transform: scale(1.1);
-}
-.box-container1{
-  padding: 20px;
-  margin-left: 1100px;
-  margin-right: 40px;
-  margin-bottom: 1000px;
-  background-color: rgb(26, 26, 26);
-  height:250px ;
-  width:250px ;
-  box-shadow: -10px -10px 30px;
-  transition: 0.3s;
-  transition: all .2s ease-in-out;
-} */
-/* .box-container1:hover{
-  transform: scale(1.1);
-} */
 
 .box-landscape{
   position: absolute;
@@ -53,26 +18,47 @@ body{
   transition: all .2s ease-in-out;
   display: flex;
   flex-direction: row;
+  animation-name: fadeinbox;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+ /* Animations to fade in main box */
+
+@keyframes fadeinbox {
+  from {
+    opacity: 0%;
+    transform: scale(0);
+  }
+  to {
+    opacity: 100%;
+    transform: scale(1);
+  }
 }
 
-
-/* .box-img0{
-  height: 250px;
-  width: 250px;
-}
-.box-img1{
-  height: 250px;
-  width: 250px;
-  background:url("images/anime.mp4") no-repeat scroll 0% 0% transparent;
-} */
 .box-img2{
   height: 300px;
   width: 300px;
+  animation: 2s ease-out slideIn;
   /* margin-left: 2%; */
 }
 
+/* Keyframes for box image animation!*/
+@keyframes slideIn {
+  0% {
+    opacity: 0%;
+    transform: translateY(-200px);
+  }
 
+  50% {
+    opacity: 0%;
+    transform: translateY(-100px);
+  }
 
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
 
 .links{
   /* background-color: antiquewhite; */
@@ -80,18 +66,33 @@ body{
   width: 300px;
   padding-left: 20px;
   margin-left: 60px;
-  font-family: CaskaydiaCove Nerd Font;
+  font-family: JetBrains Mono;
   color: aliceblue;
-  font-size: 17px;
+  font-size: 16px;
   font-weight:100;
-  padding-top: 30px;
+  padding-top: 25px;
   border-color: rgb(144, 217, 244);
   border-style: solid;
   border-width: 2px;
-
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
   
 }
 
+@keyframes fadein {
+  0% {
+    opacity: 0%;
+    transform: translateY(200px);
+  }
+  50% { opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
 
 h4{
   margin: 3px;
@@ -100,11 +101,38 @@ h4{
 h4:hover{
   font-weight: 700;
 }
-a:hover{
-  color: rgb(144, 217, 244);
+
+/* Back Pulse */
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    color: rgb(255, 255, 255);
+    
+  }
+}
+@keyframes hvr-back-pulse {
+  50% {
+    color: rgb(144, 217, 244);
+    
+  }
+}
+
+a:hover, a:focus, a:active {
+  /* color: rgb(144, 217, 244); */
   font-style: italic;
   margin-bottom: 2px;
+  font-size: 18px;
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 2s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  
 }
+
+
 a{
   text-decoration: none;
   color: aliceblue;
@@ -117,4 +145,19 @@ a{
   width: 700px;
   margin:200px auto;
   box-shadow: -10px -10px 30px;
+  animation: 2s ease-in wrapperAnim;
+}
+
+@keyframes wrapperAnim  {
+  0% {
+    opacity: 0%;
+
+  }
+  30% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    
+  }
 }
